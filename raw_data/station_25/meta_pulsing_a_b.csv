@@ -1,0 +1,51 @@
+#Date,1-Aug-2025,,
+#Station ,25,,
+"#antenna setup,""co-dropping RX [hole B], co-dropping Tx [hole A]"",,"
+"#measurement,""pulsing, absolute timing"",,"
+#Scope ch1,20dB coupled input pulse to TX,,
+#Scope ch3,RX ,,
+#VNA setup,,,
+#folder name,dropRXinNEhole_dropTXinShole_ST25_pulser,,
+#hole A offset from top of hole [m],0.81,,
+#hole A offset from top of hole [m],36,,
+#hole A,south hole,,
+#hole B,NE hole,,
+#,,,
+#hole A [m],hole B [m],filename [.csv],alternate_filename
+38.04,38.05,SRF_T080,SRF_T079
+37.05,37.01,SRF_T082,SRF_T081
+36.02,36.00,SRF_T083,
+35.04,35.00,SRF_T085,SRF_T084
+34.04,34.01,SRF_T087,SRF_T086
+33.02,33.01,SRF_T088,
+32.05,32.01,SRF_T089,
+31.03,31.03,SRF_T090,
+30.01,30.00,SRF_T091,
+29.01,29.01,SRF_T092,
+28.02,28.01,SRF_T093,
+27.02,27.02,SRF_T094,
+26.01,26.02,SRF_T095,
+25.02,25.00,SRF_T096,
+24.05,24.02,SRF_T098,SRF_T097
+23.02,23.02,SRF_T100,SRF_T099
+22.03,22.02,SRF_T101,
+21.01,21.02,SRF_T102,
+20.01,20.01,SRF_T103,
+19.04,19.02,SRF_T104,
+18.01,18.00,SRF_T105,
+17.02,17.00,SRF_T106,
+16.00,16.00,SRF_T107,
+15.01,15.01,SRF_T108,
+14.02,14.02,SRF_T109,
+13.01,13.04,SRF_T110,
+12.01,12.03,SRF_T111,
+11.02,11.00,SRF_T112,
+10.03,10.00,SRF_T113,
+9.01,9.00,SRF_T114,
+8.04,8.02,SRF_T115,
+7.02,7.03,SRF_T116,
+6.02,6.01,SRF_T117,
+5.01,5.01,SRF_T118,
+4.01,4.02,SRF_T119,
+3.01,3.00,SRF_T120,
+2.00,2.02,SRF_T121,

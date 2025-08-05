@@ -1,0 +1,2 @@
+ID,Remarks,Time,Geometry,Latitude,Longitude,Elevation,Ortho Height,Instrument Ht,Fix ID,Horizontal Accuracy,Vertical Accuracy,PDOP,HDOP,VDOP,Satellites in View,Satellites in Use
+4,,05-08-2025 14:50:31.250 -0100,POINTZ(-38.403948812 72.628818614 3254.7539),72.628818614,-38.403948812,3254.7539,0,0,4,0.01,0.0102,0.99,0.5600000000000001,0.8100000000000001,24,21

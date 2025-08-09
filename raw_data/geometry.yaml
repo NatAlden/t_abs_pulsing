@@ -1,0 +1,33 @@
+station_25:
+  dates:                        
+    - 2025-08-01
+    - 2025-08-02
+    - 2025-08-03
+
+  hole_a_latitude: 1
+  hole_a_longitude: 1
+  hole_a_z: 1
+  hole_a_h_acc: 1
+  hole_a_v_acc: 1
+
+  hole_b_latitude: 1
+  hole_b_longitude: 1
+  hole_b_z: 1
+  hole_b_h_acc: 1
+  hole_b_v_acc: 1
+
+  hole_c_latitude: 1
+  hole_c_longitude: 1
+  hole_c_z: 1
+  hole_c_h_acc: 1
+  hole_c_v_acc: 1
+
+  cable_a_file: 
+  cable_b_file: 
+
+  measurements: 
+    - pulsing_a_b_up
+    - pulsing_a_b_up
+    - pulsing_a_b_up
+  notes:                         
+    - 

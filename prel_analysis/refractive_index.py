@@ -8,38 +8,40 @@ from scipy.signal import find_peaks
 import numpy as np
 from scipy.constants import c
 import argparse
+from geopy.distance import geodesic
+
+import sys
+sys.path.append('/Users/nathanielalden/Downloads/RNO-G/t_abs_pulsing')
+import delay_utils
 
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('stat', type=str, help='station_XX')
-parser.add_argument('meas', type=str, help='pulsing_a_b')
-
-parser.add_argument('bound', type=float, nargs='?', default=0.001,)
+parser.add_argument("--station", action = "store", dest = "station", help='station_XX')
+parser.add_argument("--meas", action = "store", dest = "meas", help='pulsing_a_b')
+parser.add_argument("--bound", action = "store", dest = "bound", default=0.001, help='pulsing_a_b')
 
 args = parser.parse_args()
 
 script_dir = os.path.dirname(__file__)
+data_folder = os.path.join(script_dir, f"../raw_data/{args.station}/{args.meas}/")
+metadata_file = os.path.join(script_dir, f"../raw_data/{args.station}/meta_{args.meas}.csv")
+#save_plots = os.path.join(script_dir, f"{rootdir}/prel_analysis/results/{args.station}/{args.meas}/plots/")
+save_plots = os.path.join(script_dir, f"../plots/")  
 
-data_folder = os.path.join(script_dir, f"../raw_data/{args.stat}/{args.meas}/")
-metadata_file = os.path.join(script_dir, f"../raw_data/{args.stat}/meta_{args.meas}.csv")
-save_plots = os.path.join(script_dir, f"../prel_analysis/results/{args.stat}/{args.meas}/plots/")
- 
+
 three_part_file = os.path.join(script_dir, f"../raw_data/Greenland_ice_model.csv")  
 
-"""
-from geopy.distance import geodesic
+point_a = (72.617925736, -38.410023642)
+point_b = (72.618200468, -38.409498297)
 
-point_a = (72.630667604, -38.441826547)
-point_b = (72.63094567500001, -38.441286414)
+baseline = geodesic(point_a, point_b).meters
+print(f"Distance: {baseline:.4f} meters")
+#baseline = 34.6
 
-distance_m = geodesic(point_a, point_b).meters
-print(f"Distance: {distance_m:.4f} meters")
-"""
-baseline = 34
-
-cable_a = 307.4e-9
-cable_b = 307.4e-9
+cable_a = 557.32e-9
+cable_b = 307.38e-9
+jumper_cable = 2.968e-9
 
 with open(metadata_file, 'r') as f:
     lines = f.readlines()
@@ -93,7 +95,7 @@ for i, row in metadata.iterrows():
         peak_time = time[start_idx + peaks[0]]
         delta_t = peak_time - min_ch1_time
 
-        n = (c * (delta_t - cable_a - cable_b)) / baseline
+        n = (c * (delta_t - cable_a - cable_b + jumper_cable)) / baseline
 
         depths.append(hole_a_depth)
         refractive_indices.append(n)
@@ -122,7 +124,7 @@ np.save(save_plots + 'refractive_index.npy', results_index)
 
 plt.figure(figsize=(10, 6))
 plt.plot(- np.array(depths), refractive_indices, marker='o', linestyle='-', label= f'2025 data (hole distance {baseline}m)')
-plt.plot(all_depth, n_g_simple, color='r', linestyle='-', label= 'greenland simple model')
+#plt.plot(all_depth, n_g_simple, color='r', linestyle='-', label= 'greenland simple model')
 plt.plot(-df["depth"], df["refractive_index"], color='r', linestyle='--', label= 'greenland three part model')
 
 #plt.plot(three_part_n["depth_3"], three_part_n["index_3"], color='r', linestyle='--', label= 'greenland three part model')
@@ -135,6 +137,8 @@ plt.legend()
 plt.gca().invert_xaxis()  # Optional: deeper values lower
 plt.tight_layout()
 #plt.show()
+plt.xlim(right = -75)
+plt.ylim(top = 1.8)
 plt.savefig(save_plots + 'refractive_index.png')
 
 plt.figure(figsize=(10, 6))

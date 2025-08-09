@@ -61,11 +61,19 @@ def get_cable_delay(filename, cable = None):
     return upsample_delta_t/2
 
 if __name__ == "__main__":
-    tx_file = "SRF_T46.CSV"
-    rx_file = "SRF_T47.CSV"
-    jumper_file = "SRF_T48.CSV"
-    get_cable_delay(f"050825/cableTDR/{rx_file}", cable = "RX")
-    get_cable_delay(f"050825/cableTDR/{tx_file}", cable = "TX")
-    get_cable_delay(f"050825/cableTDR/{jumper_file}", cable = "Jumper")
+   # tx_file = "SRF_T46.CSV"
+    #rx_file = "SRF_T47.CSV"
+    #jumper_file = "SRF_T48.CSV"
+    tx_file = "SRF_T73.CSV"
+    rx_file = "SRF_T74.CSV"
+
+    tx_file = "SRF_T142.CSV"
+    rx_file = "SRF_T143.CSV"
+    #jumper_file = "SRF_T48.CSV"
+
+    basepath = "raw_data/station_34"
+    get_cable_delay(f"{basepath}/cableTDR/{rx_file}", cable = "RX")
+    get_cable_delay(f"{basepath}/cableTDR/{tx_file}", cable = "TX")
+    #get_cable_delay(f"050825/cableTDR/{jumper_file}", cable = "Jumper")
 
 

@@ -4,30 +4,105 @@ station_25:
     - 2025-08-02
     - 2025-08-03
 
-  hole_a_latitude: 1
-  hole_a_longitude: 1
-  hole_a_z: 1
-  hole_a_h_acc: 1
-  hole_a_v_acc: 1
+  hole_a_latitude: 72.630618583
+  hole_a_longitude: -38.440305155
+  hole_a_z: 3253.1943
+  hole_a_h_acc: 0.0138
+  hole_a_v_acc: 0.0318
 
-  hole_b_latitude: 1
-  hole_b_longitude: 1
-  hole_b_z: 1
-  hole_b_h_acc: 1
-  hole_b_v_acc: 1
+  hole_b_latitude: 72.630888469
+  hole_b_longitude: -38.439786312
+  hole_b_z: 3253.3781
+  hole_b_h_acc: 0.0107
+  hole_b_v_acc: 0.0179
 
-  hole_c_latitude: 1
-  hole_c_longitude: 1
-  hole_c_z: 1
-  hole_c_h_acc: 1
-  hole_c_v_acc: 1
-
-  cable_a_file: 
-  cable_b_file: 
+  hole_c_latitude: 72.630888686
+  hole_c_longitude: -38.440829128
+  hole_c_z: 3253.43
+  hole_c_h_acc: 0.01
+  hole_c_v_acc: 0.01
 
   measurements: 
-    - pulsing_a_b_up
-    - pulsing_a_b_up
-    - pulsing_a_b_up
+    pulsing_a_c_up:
+      cable_a_file: "SRF_T81.CSV"
+      cable_b_file: "SRF_T82.CSV"
+    pulsing_a_c_down:
+      cable_a_file: "SRF_T81.CSV"
+      cable_b_file: "SRF_T82.CSV"
+    pulsing_a_b:
+      cable_a_file: "SRF_TX45.CSV"
+      cable_b_file: "SRF_TX46.CSV"
   notes:                         
     - 
+
+station_35:
+  dates:                        
+    - 2025-08-04
+    - 2025-08-05
+
+  hole_a_latitude: 72.628788712
+  hole_a_longitude: -38.403881273
+  hole_a_z: 3254.7583
+  hole_a_h_acc: 0.01
+  hole_a_v_acc: 0.0173
+
+  hole_b_latitude: 72.629053927
+  hole_b_longitude: -38.403381303
+  hole_b_z: 3254.8824
+  hole_b_h_acc: 0.01
+  hole_b_v_acc: 0.0109
+
+  hole_c_latitude: 72.629055366
+  hole_c_longitude: -38.404398421
+  hole_c_z: 3254.813
+  hole_c_h_acc: 0.01
+  hole_c_v_acc: 0.0169
+
+  measurements: 
+    pulsing_a_c_up:
+      cable_a_file: "SRF_T46.CSV"
+      cable_b_file: "SRF_T47.CSV"
+    pulsing_a_b_down:
+      cable_a_file: "SRF_T89.CSV"
+      cable_b_file: "SRF_T88.CSV"
+    pulsing_a_b_up:
+      cable_a_file: "SRF_T89.CSV"
+      cable_b_file: "SRF_T88.CSV"
+    pulsing_a_b_hpol:
+      cable_a_file: "SRF_T215.CSV"
+      cable_b_file: "SRF_T214.CSV"
+  notes:                         
+    - 
+
+station_34:
+  dates:                        
+    - 2025-08-06
+    - 2025-08-07
+
+  hole_a_latitude: 72.617925736
+  hole_a_longitude: -38.410023642
+  hole_a_z: 3254.5247
+  hole_a_h_acc: 0.0111
+  hole_a_v_acc: 0.0175
+
+  hole_b_latitude: 72.618200468
+  hole_b_longitude: -38.409498297
+  hole_b_z: 3254.6477
+  hole_b_h_acc: 0.01
+  hole_b_v_acc: 0.0113
+
+  hole_c_latitude: 72.618196808
+  hole_c_longitude: -38.410535718
+  hole_c_z: 3254.5417
+  hole_c_h_acc: 0.0124
+  hole_c_v_acc: 0.0239
+
+  measurements: 
+    pulsing_b_a_down:
+      cable_a_file: "SRF_T73.CSV"
+      cable_b_file: "SRF_T74.CSV"
+    pulsing_b_c_down:
+      cable_a_file: "SRF_T114.CSV"
+      cable_b_file: "SRF_T115.CSV"
+  notes:                         
+    - Drillers note that there is some relatively larger amount of hole tilt here

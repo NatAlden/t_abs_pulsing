@@ -28,11 +28,15 @@ def plot_multiple_measurements(stations, drop_names, linestyles, colors):
     #Now overplot ice models
     three_part_file = os.path.join(script_dir, f"raw_data/Greenland_ice_model.csv")  
     df = pd.read_csv(three_part_file, header=None, names=["depth", "refractive_index"])
+
     ax_main.plot(-df["depth"], df["refractive_index"], color='violet', linestyle='-.', label= 'greenland 3-part exponential model', lw = 2)
     ax_res.plot(-df["depth"], np.zeros(len(df["depth"])), color='violet', linestyle='-.', lw = 2)
 
     for station, drop_name, color, ls in zip(stations, drop_names, colors, linestyles):
         [depths, ior] = np.load(f"processed_data/{station}_{drop_name}.npy")
+        dfdata = pd.DataFrame({"depth" : depths, "ior" : ior})
+        dfdata.to_csv(f"processed_data/{station}_{drop_name}.csv", index=False)
+
         hole_names = drop_name.split('_')[1:]
 
         model_interp = np.interp(depths, df["depth"], df["refractive_index"])
